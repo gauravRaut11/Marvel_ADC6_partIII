@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+    <title>Document</title>
+</head>
+<body>
+    
+<form class="form-horizontal" method="post" action="update/{{items.pk}}" enctype="multipart/form-data">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Online_Shopping</legend>
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
+  <div class="col-md-4">
+    {% csrf_token %}
+    <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text" value="{{items.product_name}}">
+    
+  </div>
+</div>
+
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
+  <div class="col-md-4">
+    <input id="product_name" name="category" placeholder="PRODUCT Category" class="form-control input-md" required="" type="text" value="{{items.category}}">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="approuved_by">Price</label>  
+  <div class="col-md-4">
+  <input id="approuved_by" name="price" placeholder="Price" class="form-control input-md" required="" type="number" value="{{items.price}}">
+    <br>
+ <!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">Upload Picture</label>
+  <div class="col-md-4">
+    <input id="filebutton" name="image" class="input-file" type="file" value="{{items.image.url}}">
+  </div>
+</div>
+
+
+        <!-- Button -->
+        <div class="form-group">
+        <div class="col-md-4">
+         
+            <input type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary" value="Upload File">
+        </div>
+        </div>
+
+</fieldset>
+</form>
+</body>
+</html>
